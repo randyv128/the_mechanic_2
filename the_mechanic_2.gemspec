@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "benchmark-ips", "~> 2.0"
   spec.add_dependency "memory_profiler", "~> 1.0"
   
-  spec.add_development_dependency "rspec-rails", "~> 6.0"
+  spec.add_development_dependency "rspec-rails", "~> 8.0"
   spec.add_development_dependency "sqlite3", "~> 1.4"
   spec.add_development_dependency "rails-controller-testing"
 end
