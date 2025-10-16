@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Mechanic 2 - Ruby Code Benchmarking</title>
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token" content="<%= form_authenticity_token %>" />
+  <style>
+    <%= raw inline_css %>
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <h1>🔧 The Mechanic 2</h1>
+          <p class="header-subtitle">Ruby Code Benchmarking Engine</p>
+        </div>
+        <button id="reset-btn" class="btn btn-secondary">Reset</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Message Container -->
+      <div id="message-container"></div>
+
+      <!-- Code Input Section -->
+      <section class="code-input-section">
+        <div class="card">
+          <h2 class="card-header">Code Input</h2>
+          
+          <!-- Code A and B Grid -->
+          <div class="code-input-grid">
+            <div class="code-input-container">
+              <label class="code-input-label" for="code-a">
+                Code A
+              </label>
+              <textarea 
+                id="code-a" 
+                class="code-editor" 
+                rows="10"
+                placeholder="# Enter first code snippet&#10;# Example: arr.sum"
+              ></textarea>
+            </div>
+
+            <div class="code-input-container">
+              <label class="code-input-label" for="code-b">
+                Code B
+              </label>
+              <textarea 
+                id="code-b" 
+                class="code-editor" 
+                rows="10"
+                placeholder="# Enter second code snippet&#10;# Example: arr.reduce(:+)"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Shared Setup -->
+          <div class="shared-setup-container">
+            <label class="code-input-label" for="shared-setup">
+              Shared Setup (Optional)
+            </label>
+            <textarea 
+              id="shared-setup" 
+              class="code-editor" 
+              rows="4"
+              placeholder="# Optional: Code that runs before both snippets&#10;# Example: arr = [1, 2, 3, 4, 5]"
+            ></textarea>
+          </div>
+
+          <!-- Timeout Setting -->
+          <div style="margin-top: 1rem;">
+            <label class="code-input-label" for="timeout">
+              Timeout (seconds)
+            </label>
+            <input 
+              type="number" 
+              id="timeout" 
+              value="30" 
+              min="1" 
+              max="300"
+              style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; width: 100px;"
+            />
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="btn-group">
+            <button id="validate-btn" class="btn btn-secondary">
+              Validate Code
+            </button>
+            <button id="run-btn" class="btn btn-primary">
+              Run Benchmark
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Section -->
+      <section id="results-section" class="results-section hidden">
+        <h2 class="card-header">Results</h2>
+        
+        <!-- Summary -->
+        <div class="summary-section">
+          <p id="summary-text" class="summary-text"></p>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="results-grid">
+          <!-- Code A Results -->
+          <div id="code-a-card" class="result-card">
+            <div class="result-card-header">
+              <h3 class="result-card-title">Code A</h3>
+              <span class="winner-badge hidden">Winner</span>
+            </div>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-label">IPS (iterations/sec)</span>
+                <span class="metric-value" data-metric="ips">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Standard Deviation</span>
+                <span class="metric-value" data-metric="stddev">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Objects Allocated</span>
+                <span class="metric-value" data-metric="objects">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Memory (MB)</span>
+                <span class="metric-value" data-metric="memory">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Execution Time</span>
+                <span class="metric-value" data-metric="time">-</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Code B Results -->
+          <div id="code-b-card" class="result-card">
+            <div class="result-card-header">
+              <h3 class="result-card-title">Code B</h3>
+              <span class="winner-badge hidden">Winner</span>
+            </div>
+            <ul class="metrics-list">
+              <li class="metric-item">
+                <span class="metric-label">IPS (iterations/sec)</span>
+                <span class="metric-value" data-metric="ips">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Standard Deviation</span>
+                <span class="metric-value" data-metric="stddev">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Objects Allocated</span>
+                <span class="metric-value" data-metric="objects">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Memory (MB)</span>
+                <span class="metric-value" data-metric="memory">-</span>
+              </li>
+              <li class="metric-item">
+                <span class="metric-label">Execution Time</span>
+                <span class="metric-value" data-metric="time">-</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Runtime Logs & Detailed Analysis -->
+        <div id="runtime-logs-section" class="runtime-logs-section hidden">
+          <div class="logs-container">
+            <button id="logs-toggle" class="logs-header" aria-expanded="true">
+              <div class="logs-header-content">
+                <svg class="logs-chevron expanded" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <h3 class="logs-title">Runtime Logs & Detailed Analysis</h3>
+              </div>
+              <span class="logs-toggle-text">Click to collapse</span>
+            </button>
+            
+            <div id="logs-content" class="logs-content">
+              <!-- Tab Navigation -->
+              <div class="logs-tabs">
+                <button class="log-tab active" data-tab="summary">
+                  <span class="tab-icon">📊</span>
+                  <span>Comparison Summary</span>
+                </button>
+                <button class="log-tab" data-tab="benchmark">
+                  <span class="tab-icon">⚡</span>
+                  <span>Benchmark Output</span>
+                </button>
+                <button class="log-tab" data-tab="memory">
+                  <span class="tab-icon">💾</span>
+                  <span>Memory Report</span>
+                </button>
+                <button class="log-tab" data-tab="gc">
+                  <span class="tab-icon">🔄</span>
+                  <span>GC Statistics</span>
+                </button>
+              </div>
+              
+              <!-- Tab Panels -->
+              <div class="logs-panels">
+                <!-- Summary Panel -->
+                <div class="log-panel active" data-panel="summary">
+                  <h4 class="panel-title">Comparison Summary</h4>
+                  <div class="panel-content">
+                    <pre id="summary-log" class="log-output">Run a benchmark to see the comparison summary...</pre>
+                  </div>
+                  <p class="panel-description">High-level comparison of both code snippets.</p>
+                </div>
+                
+                <!-- Benchmark Panel -->
+                <div class="log-panel hidden" data-panel="benchmark">
+                  <h4 class="panel-title">Benchmark Output</h4>
+                  <div class="panel-content">
+                    <pre id="benchmark-log" class="log-output">Benchmark.ips output will appear here...</pre>
+                  </div>
+                  <p class="panel-description">Raw output from Benchmark.ips execution.</p>
+                </div>
+                
+                <!-- Memory Panel -->
+                <div class="log-panel hidden" data-panel="memory">
+                  <h4 class="panel-title">Memory Report</h4>
+                  <div class="panel-content">
+                    <pre id="memory-log" class="log-output">Memory profiling data will appear here...</pre>
+                  </div>
+                  <p class="panel-description">Detailed memory allocation and usage statistics.</p>
+                </div>
+                
+                <!-- GC Panel -->
+                <div class="log-panel hidden" data-panel="gc">
+                  <h4 class="panel-title">Garbage Collection Statistics</h4>
+                  <div class="panel-content">
+                    <pre id="gc-log" class="log-output">GC statistics will be collected during benchmark execution...</pre>
+                  </div>
+                  <p class="panel-description">Ruby garbage collector statistics during benchmark execution.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        The Mechanic 2 - Ruby Code Benchmarking Engine | 
+        <a href="https://github.com/yourusername/the_mechanic" target="_blank">GitHub</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    <%= raw inline_javascript %>
+  </script>
+</body>
+</html>

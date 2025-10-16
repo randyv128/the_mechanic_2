@@ -1,0 +1,717 @@
+Started GET "/" for ::1 at 2025-10-15 23:54:59 -0700
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/mechanic" for ::1 at 2025-10-15 23:55:04 -0700
+Processing by TheMechanic2::BenchmarksController#index as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template the_mechanic2/benchmarks/index, the_mechanic2/application/index with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}.
+
+Searched in:
+  * "/Users/mrpandapants/Dev/the_mechanic_2/app/views"
+  * "/Users/mrpandapants/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.2.2.2/app/views"
+  * "/Users/mrpandapants/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.2.2.2/app/views"
+):
+  
+actionview (7.2.2.2) lib/action_view/path_set.rb:42:in `find'
+actionview (7.2.2.2) lib/action_view/lookup_context.rb:131:in `find'
+actionview (7.2.2.2) lib/action_view/renderer/template_renderer.rb:49:in `determine_template'
+actionview (7.2.2.2) lib/action_view/renderer/template_renderer.rb:7:in `render'
+actionview (7.2.2.2) lib/action_view/renderer/renderer.rb:58:in `render_template_to_object'
+actionview (7.2.2.2) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+actionview (7.2.2.2) lib/action_view/rendering.rb:135:in `block in _render_template'
+actionview (7.2.2.2) lib/action_view/base.rb:308:in `in_rendering_context'
+actionview (7.2.2.2) lib/action_view/rendering.rb:134:in `_render_template'
+actionpack (7.2.2.2) lib/action_controller/metal/streaming.rb:258:in `_render_template'
+actionview (7.2.2.2) lib/action_view/rendering.rb:121:in `render_to_body'
+actionpack (7.2.2.2) lib/action_controller/metal/rendering.rb:186:in `render_to_body'
+actionpack (7.2.2.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (7.2.2.2) lib/abstract_controller/rendering.rb:29:in `render'
+actionpack (7.2.2.2) lib/action_controller/metal/rendering.rb:167:in `render'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block (2 levels) in render'
+benchmark (0.4.1) lib/benchmark.rb:324:in `realtime'
+activesupport (7.2.2.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block in render'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:101:in `cleanup_view_runtime'
+activerecord (7.2.2.2) lib/active_record/railties/controller_runtime.rb:46:in `cleanup_view_runtime'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:31:in `render'
+/Users/mrpandapants/Dev/the_mechanic_2/app/controllers/the_mechanic_2/benchmarks_controller.rb:12:in `index'
+actionpack (7.2.2.2) lib/action_controller/metal/basic_implicit_render.rb:8:in `send_action'
+actionpack (7.2.2.2) lib/abstract_controller/base.rb:226:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/rendering.rb:193:in `process_action'
+actionpack (7.2.2.2) lib/abstract_controller/callbacks.rb:261:in `block in process_action'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.2.2.2) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.2.2) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.2) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.2) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.2) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.2) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.2) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.2) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:896:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+railties (7.2.2.2) lib/rails/railtie.rb:226:in `public_send'
+railties (7.2.2.2) lib/rails/railtie.rb:226:in `method_missing'
+actionpack (7.2.2.2) lib/action_dispatch/routing/mapper.rb:33:in `block in <class:Constraints>'
+actionpack (7.2.2.2) lib/action_dispatch/routing/mapper.rb:62:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:896:in `call'
+rack (3.1.18) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.18) lib/rack/etag.rb:29:in `call'
+rack (3.1.18) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.18) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.18) lib/rack/method_override.rb:28:in `call'
+rack (3.1.18) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.18) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/mechanic" for ::1 at 2025-10-15 23:55:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template the_mechanic2/benchmarks/index, the_mechanic2/application/index with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :webp, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}.
+
+Searched in:
+  * "/Users/mrpandapants/Dev/the_mechanic_2/app/views"
+  * "/Users/mrpandapants/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.2.2.2/app/views"
+  * "/Users/mrpandapants/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.2.2.2/app/views"
+):
+  
+actionview (7.2.2.2) lib/action_view/path_set.rb:42:in `find'
+actionview (7.2.2.2) lib/action_view/lookup_context.rb:131:in `find'
+actionview (7.2.2.2) lib/action_view/renderer/template_renderer.rb:49:in `determine_template'
+actionview (7.2.2.2) lib/action_view/renderer/template_renderer.rb:7:in `render'
+actionview (7.2.2.2) lib/action_view/renderer/renderer.rb:58:in `render_template_to_object'
+actionview (7.2.2.2) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+actionview (7.2.2.2) lib/action_view/rendering.rb:135:in `block in _render_template'
+actionview (7.2.2.2) lib/action_view/base.rb:308:in `in_rendering_context'
+actionview (7.2.2.2) lib/action_view/rendering.rb:134:in `_render_template'
+actionpack (7.2.2.2) lib/action_controller/metal/streaming.rb:258:in `_render_template'
+actionview (7.2.2.2) lib/action_view/rendering.rb:121:in `render_to_body'
+actionpack (7.2.2.2) lib/action_controller/metal/rendering.rb:186:in `render_to_body'
+actionpack (7.2.2.2) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (7.2.2.2) lib/abstract_controller/rendering.rb:29:in `render'
+actionpack (7.2.2.2) lib/action_controller/metal/rendering.rb:167:in `render'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block (2 levels) in render'
+benchmark (0.4.1) lib/benchmark.rb:324:in `realtime'
+activesupport (7.2.2.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:32:in `block in render'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:101:in `cleanup_view_runtime'
+activerecord (7.2.2.2) lib/active_record/railties/controller_runtime.rb:46:in `cleanup_view_runtime'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:31:in `render'
+/Users/mrpandapants/Dev/the_mechanic_2/app/controllers/the_mechanic_2/benchmarks_controller.rb:12:in `index'
+actionpack (7.2.2.2) lib/action_controller/metal/basic_implicit_render.rb:8:in `send_action'
+actionpack (7.2.2.2) lib/abstract_controller/base.rb:226:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/rendering.rb:193:in `process_action'
+actionpack (7.2.2.2) lib/abstract_controller/callbacks.rb:261:in `block in process_action'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.2.2.2) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.2.2) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.2) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.2) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.2) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.2) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.2) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.2) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:896:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+railties (7.2.2.2) lib/rails/railtie.rb:226:in `public_send'
+railties (7.2.2.2) lib/rails/railtie.rb:226:in `method_missing'
+actionpack (7.2.2.2) lib/action_dispatch/routing/mapper.rb:33:in `block in <class:Constraints>'
+actionpack (7.2.2.2) lib/action_dispatch/routing/mapper.rb:62:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:896:in `call'
+rack (3.1.18) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.18) lib/rack/etag.rb:29:in `call'
+rack (3.1.18) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.18) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.18) lib/rack/method_override.rb:28:in `call'
+rack (3.1.18) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.18) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/mechanic" for ::1 at 2025-10-15 23:56:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-15 23:56:42 -0700
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-15 23:57:20 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-10-15 23:57:20 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/mechanic" for ::1 at 2025-10-15 23:57:29 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-15 23:59:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:00:04 -0700
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/validate" for ::1 at 2025-10-16 00:00:16 -0700
+Processing by TheMechanic2::BenchmarksController#validate as */*
+  Parameters: {"code_a"=>"puts 1", "code_b"=>"puts 2", "benchmark"=>{"code_a"=>"puts 1", "code_b"=>"puts 2"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Content in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.2.2.2) lib/action_controller/metal/request_forgery_protection.rb:312:in `handle_unverified_request'
+actionpack (7.2.2.2) lib/action_controller/metal/request_forgery_protection.rb:406:in `handle_unverified_request'
+actionpack (7.2.2.2) lib/action_controller/metal/request_forgery_protection.rb:395:in `verify_authenticity_token'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:362:in `block in make_lambda'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:179:in `block in call'
+actionpack (7.2.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:180:in `call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:559:in `each'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.2.2) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.2.2) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.2.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.2.2) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.2.2) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.2.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.2.2) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.2.2) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.2.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.2.2) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:896:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+railties (7.2.2.2) lib/rails/railtie.rb:226:in `public_send'
+railties (7.2.2.2) lib/rails/railtie.rb:226:in `method_missing'
+actionpack (7.2.2.2) lib/action_dispatch/routing/mapper.rb:33:in `block in <class:Constraints>'
+actionpack (7.2.2.2) lib/action_dispatch/routing/mapper.rb:62:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.2.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.2.2) lib/action_dispatch/routing/route_set.rb:896:in `call'
+rack (3.1.18) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.18) lib/rack/etag.rb:29:in `call'
+rack (3.1.18) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.18) lib/rack/head.rb:15:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.2.2) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.18) lib/rack/method_override.rb:28:in `call'
+rack (3.1.18) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.18) lib/rack/sendfile.rb:131:in `call'
+actionpack (7.2.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.1) lib/puma/configuration.rb:279:in `call'
+puma (6.6.1) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.1) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.1) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.1) lib/puma/server.rb:472:in `process_client'
+puma (6.6.1) lib/puma/server.rb:254:in `block in run'
+puma (6.6.1) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started POST "/mechanic/validate" for ::1 at 2025-10-16 00:05:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#validate as */*
+  Parameters: {"code_a"=>"puts 1", "code_b"=>"puts 2", "benchmark"=>{"code_a"=>"puts 1", "code_b"=>"puts 2"}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:05:42 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"(1..100).to_a.sum", "code_b"=>"(1..100).reduce(:+)", "timeout"=>30, "benchmark"=>{"code_a"=>"(1..100).to_a.sum", "code_b"=>"(1..100).reduce(:+)", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 3459ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:10:46 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 00:10:59 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/mechanic" for ::1 at 2025-10-16 00:12:12 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:12:19 -0700
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:12:24 -0700
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:12:30 -0700
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:18:36 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 00:18:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/run" for ::1 at 2025-10-16 00:18:44 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/run"):
+  
+Started GET "/mechanic" for ::1 at 2025-10-16 00:20:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:20:10 -0700
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 0ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:22:31 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 00:22:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:22:37 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"", "code_a"=>"puts 123", "code_b"=>"puts 234", "timeout"=>30, "benchmark"=>{"shared_setup"=>"", "code_a"=>"puts 123", "code_b"=>"puts 234", "timeout"=>30}}
+Completed 200 OK in 3666ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 108.2ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:24:54 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"", "code_a"=>"puts \"\#{123.present?}\"", "code_b"=>"puts 234", "timeout"=>30, "benchmark"=>{"shared_setup"=>"", "code_a"=>"puts \"\#{123.present?}\"", "code_b"=>"puts 234", "timeout"=>30}}
+Completed 200 OK in 3681ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 96.2ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:26:04 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"", "code_a"=>"puts \"\#{324.present? ? \"5\" : 4}\"", "code_b"=>"puts 234", "timeout"=>30, "benchmark"=>{"shared_setup"=>"", "code_a"=>"puts \"\#{324.present? ? \"5\" : 4}\"", "code_b"=>"puts 234", "timeout"=>30}}
+Completed 200 OK in 3637ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 82.9ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:27:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"1 + 1", "code_b"=>"1 + 1 + 1 + 1 + 1", "timeout"=>30, "benchmark"=>{"code_a"=>"1 + 1", "code_b"=>"1 + 1 + 1 + 1 + 1", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 6449ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:28:11 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"(1..10).to_a", "code_b"=>"(1..1000).to_a", "timeout"=>30, "benchmark"=>{"code_a"=>"(1..10).to_a", "code_b"=>"(1..1000).to_a", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 6521ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:37:25 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 00:37:25 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:37:48 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"", "code_a"=>"puts \"\#{2314.present?}\"", "code_b"=>"puts 2345", "timeout"=>30, "benchmark"=>{"shared_setup"=>"", "code_a"=>"puts \"\#{2314.present?}\"", "code_b"=>"puts 2345", "timeout"=>30}}
+Completed 200 OK in 7176ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 292.5ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:38:40 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30, "benchmark"=>{"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 7393ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 258.5ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:39:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30, "benchmark"=>{"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 660ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:40:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"1 + 1", "code_b"=>"(1..100).sum", "timeout"=>30, "benchmark"=>{"code_a"=>"1 + 1", "code_b"=>"(1..100).sum", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15463ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:42:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"1 + 1", "code_b"=>"(1..100).sum", "timeout"=>30, "benchmark"=>{"code_a"=>"1 + 1", "code_b"=>"(1..100).sum", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15443ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:42:32 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30, "benchmark"=>{"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15624ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:44:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30, "benchmark"=>{"code_a"=>"puts 1234", "code_b"=>"puts \"\#{2314.present?}\"", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15625ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:44:52 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"\"hello\"", "code_b"=>"\"hello \#{\"world\"}\"", "timeout"=>30, "benchmark"=>{"code_a"=>"\"hello\"", "code_b"=>"\"hello \#{\"world\"}\"", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15490ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:45:17 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"(1..10).to_a", "code_b"=>"(1..1000).to_a", "timeout"=>30, "benchmark"=>{"code_a"=>"(1..10).to_a", "code_b"=>"(1..1000).to_a", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15652ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 00:46:02 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 00:46:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/mechanic/run" for ::1 at 2025-10-16 00:46:21 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"", "code_a"=>"puts \"\#{112345.presence || \"\"}\"", "code_b"=>"puts 112345", "timeout"=>30, "benchmark"=>{"shared_setup"=>"", "code_a"=>"puts \"\#{112345.presence || \"\"}\"", "code_b"=>"puts 112345", "timeout"=>30}}
+Completed 200 OK in 15564ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 08:48:56 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 08:48:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/mechanic/run" for ::1 at 2025-10-16 08:49:24 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr=[1,2,3]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr=[1,2,3]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Completed 500 Internal Server Error in 1436ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 08:49:34 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 08:49:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/mechanic/run" for ::1 at 2025-10-16 08:49:58 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 669ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 08:51:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 665ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 08:53:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 654ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 08:54:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr = [1, 2, 3, 4, 5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15596ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 08:55:21 -0700
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 08:55:21 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/mechanic/run" for ::1 at 2025-10-16 08:55:43 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr=[1,2,3,4,5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr=[1,2,3,4,5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Completed 200 OK in 15479ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/export" for ::1 at 2025-10-16 08:59:47 -0700
+Processing by TheMechanic2::BenchmarksController#export as */*
+  Parameters: {"results"=>{"code_a_metrics"=>{"ips"=>115897, "stddev"=>3361.01, "objects"=>600, "memory_mb"=>0.0427, "execution_time"=>4.0e-05}, "code_b_metrics"=>{"ips"=>108893, "stddev"=>2613.43, "objects"=>600, "memory_mb"=>0.0427, "execution_time"=>5.9e-05}, "winner"=>"code_a", "performance_ratio"=>1.06, "summary"=>"Code A is 1.06× faster than Code B"}, "benchmark"=>{"results"=>{"code_a_metrics"=>{"ips"=>115897, "stddev"=>3361.01, "objects"=>600, "memory_mb"=>0.0427, "execution_time"=>4.0e-05}, "code_b_metrics"=>{"ips"=>108893, "stddev"=>2613.43, "objects"=>600, "memory_mb"=>0.0427, "execution_time"=>5.9e-05}, "winner"=>"code_a", "performance_ratio"=>1.06, "summary"=>"Code A is 1.06× faster than Code B"}, "format"=>"markdown"}}
+Completed 500 Internal Server Error in 8ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.9ms)
+
+
+Started GET "/mechanic" for ::1 at 2025-10-16 09:01:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 09:01:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/mechanic" for ::1 at 2025-10-16 09:04:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as HTML
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-10-16 09:04:24 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/mechanic/run" for ::1 at 2025-10-16 09:04:54 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr=[1,2,3,4,5,99]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr=[1,2,3,4,5,99]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Completed 200 OK in 15529ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.6ms)
+
+
