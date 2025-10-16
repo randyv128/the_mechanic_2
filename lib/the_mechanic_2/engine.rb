@@ -9,8 +9,10 @@ module TheMechanic2
       g.factory_bot dir: 'spec/factories'
     end
     
-    # Ensure services are autoloaded
+    # Ensure all app directories are autoloaded
+    config.autoload_paths << File.expand_path('../../app/controllers', __dir__)
     config.autoload_paths << File.expand_path('../../app/services', __dir__)
+    config.autoload_paths << File.expand_path('../../app/models', __dir__)
     
     # Explicitly set view paths for the engine
     config.paths["app/views"].unshift(File.expand_path('../../app/views', __dir__))

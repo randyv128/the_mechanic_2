@@ -2,6 +2,16 @@
 
 All notable changes to The Mechanic 2 will be documented in this file.
 
+## [0.1.1] - 2025-10-16
+
+### Fixed
+- Fixed autoloading issue with controllers, services, and models
+- Added explicit autoload paths to engine configuration
+- Resolved "uninitialized constant TheMechanic2::BenchmarksController" error
+
+### Changed
+- Improved engine initialization for better Rails integration
+
 ## [0.1.0] - 2025-10-15
 
 ### Added - Initial Release
