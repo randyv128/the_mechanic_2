@@ -17,9 +17,9 @@ A Rails Engine for benchmarking Ruby code with full access to your application's
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'the_mechanic_2', path: 'path/to/the_mechanic_2'
-# or from git
-gem 'the_mechanic_2', git: 'https://github.com/yourusername/the_mechanic_2'
+gem 'the_mechanic_2'
+# or from GitHub
+gem 'the_mechanic_2', git: 'https://github.com/randyv128/the_mechanic_2'
 ```
 
 Then execute:
@@ -36,7 +36,7 @@ Add this to your `config/routes.rb`:
 
 ```ruby
 Rails.application.routes.draw do
-  mount TheMechanic2::Engine => '/ask_the_mechanic_2'
+  mount TheMechanic2::Engine => '/mechanic'
   
   # Your other routes...
 end
@@ -50,9 +50,11 @@ rails server
 
 ### 3. Access The Mechanic
 
-Navigate to: `http://localhost:3000/ask_the_mechanic_2`
+Navigate to: `http://localhost:3000/mechanic`
 
 That's it! No additional setup required.
+
+> **Note:** The engine works with Rails 6.0+ and uses `eager_load_paths` for proper autoloading compatibility.
 
 ## Example Usage
 

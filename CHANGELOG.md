@@ -2,12 +2,22 @@
 
 All notable changes to The Mechanic 2 will be documented in this file.
 
+## [0.1.2] - 2025-10-16
+
+### Fixed
+- Fixed Rails 6+ autoloading compatibility using `eager_load_paths`
+- Resolved "uninitialized constant TheMechanic2::BenchmarksController" error
+- Proper path resolution using `Engine.root.join`
+
+### Changed
+- Switched from `autoload_paths` to `eager_load_paths` for Rails 6+ compatibility
+- Simplified engine configuration for better Rails integration
+- Updated README with correct mount path examples
+
 ## [0.1.1] - 2025-10-16
 
 ### Fixed
-- Fixed autoloading issue with controllers, services, and models
-- Added explicit autoload paths to engine configuration
-- Resolved "uninitialized constant TheMechanic2::BenchmarksController" error
+- Initial attempt to fix autoloading issue (superseded by 0.1.2)
 
 ### Changed
 - Improved engine initialization for better Rails integration
