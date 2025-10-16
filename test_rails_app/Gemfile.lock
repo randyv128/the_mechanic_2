@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    the_mechanic_2 (0.1.0)
+    the_mechanic_2 (0.1.1)
       benchmark-ips (~> 2.0)
       memory_profiler (~> 1.0)
       rails (>= 6.0)

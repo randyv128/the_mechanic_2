@@ -1,7 +1,8 @@
 TheMechanic2::Engine.routes.draw do
-  root to: 'the_mechanic_2/benchmarks#index'
+  # Routes are automatically namespaced due to isolate_namespace
+  root to: 'benchmarks#index'
   
-  post 'validate', to: 'the_mechanic_2/benchmarks#validate'
-  post 'run', to: 'the_mechanic_2/benchmarks#run'
-  post 'export', to: 'the_mechanic_2/benchmarks#export'
+  post 'validate', to: 'benchmarks#validate'
+  post 'run', to: 'benchmarks#run'
+  post 'export', to: 'benchmarks#export'
 end
