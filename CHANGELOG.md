@@ -2,6 +2,20 @@
 
 All notable changes to The Mechanic 2 will be documented in this file.
 
+## [0.1.3] - 2025-10-16
+
+### Fixed
+- Complete restructure to use Ruby autoload conventions
+- Moved all classes from `app/` to `lib/the_mechanic_2/`
+- Added explicit autoload declarations for all classes
+- No longer depends on Zeitwerk conventions
+- Works with both eager_load and autoload modes
+
+### Changed
+- Simplified engine configuration (removed eager_load_paths)
+- Proper Ruby naming conventions for autoloading
+- All classes now in lib directory following standard gem structure
+
 ## [0.1.2] - 2025-10-16
 
 ### Fixed

@@ -723,3 +723,25 @@ Processing by TheMechanic2::BenchmarksController#index as */*
 Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/mechanic" for ::1 at 2025-10-16 13:02:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TheMechanic2::BenchmarksController#index as */*
+  Rendering /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb
+  Rendered /Users/mrpandapants/Dev/the_mechanic_2/app/views/the_mechanic_2/benchmarks/index.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 13:02:56 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"code_a"=>"1 + 1", "code_b"=>"2 + 2", "timeout"=>30, "benchmark"=>{"code_a"=>"1 + 1", "code_b"=>"2 + 2", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15590ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/mechanic/run" for ::1 at 2025-10-16 13:03:22 -0700
+Processing by TheMechanic2::BenchmarksController#run as */*
+  Parameters: {"shared_setup"=>"arr = [1,2,3,4,5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30, "benchmark"=>{"shared_setup"=>"arr = [1,2,3,4,5]", "code_a"=>"arr.sum", "code_b"=>"arr.reduce(:+)", "timeout"=>30}}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 15490ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
